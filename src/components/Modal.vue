@@ -27,7 +27,8 @@
           
           <v-divider class="my-3"></v-divider>
           
-          Du som känner att du vill hjälpa till med att ordna eller leda aktiviteter och/eller kanske hjälpa till att arbeta med Altunagårdens skötsel är välkommen att kontakta någon i vår styrelse.
+          Här kan man också informera om något spännande.
+<br />
           <v-btn small @click="$vuetify.goTo('#contact', dialog = false,  {duration: 500, easing: 'easeInOutCubic'})" max-width="200" class="mt-3">Till kontaktsidan</v-btn>
         </v-card-text>
         <v-divider></v-divider>
@@ -37,7 +38,7 @@
             text
             @click="dialog = false"
           >
-            Close
+            Stäng
           </v-btn>
         </v-card-actions>
       </v-card>
@@ -46,6 +47,7 @@
 
 <script>
 export default {
+  name: 'modal',
     data() {
         return {
             dialog: true,

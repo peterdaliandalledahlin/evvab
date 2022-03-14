@@ -5,7 +5,7 @@
             ref="observer"
             v-slot="{ invalid }"
         >
-            <form>
+            <form enctype=multipart/form-data>
                 <!-- <input type="hidden" name="_captcha" value="false">
                 <input type="hidden" name="_next" value="http://localhost:8085/"> -->
                 <!-- formsubmit.co -->
@@ -55,16 +55,30 @@
                     ></v-textarea>
                 </validation-provider>
 
+                <validation-provider
+                    v-slot="{ errors }"
+                    name="attachment"
+                >
+                    <v-file-input
+                        v-model="file"
+                        :error-messages="errors"
+                        name="attachment"
+                        accept="image/*"
+                        label="Bifoga fil"
+                        clearable
+                    ></v-file-input>
+                </validation-provider> 
+
                 <v-btn
                     class="mr-4"
                     type="submit"
                     :disabled="invalid"
                      @click.prevent="submit"
                 >
-                    submit
+                    skicka
                 </v-btn>
                 <v-btn @click="clear">
-                    clear
+                    rensa
                 </v-btn>
             </form>
         </validation-observer>
@@ -80,7 +94,7 @@
                 v-bind="attrs"
                 @click="snackbar = false"
                 >
-                Close
+                Stäng
                 </v-btn>
             </template>
         </v-snackbar>
@@ -124,6 +138,7 @@ export default {
             name: '',
             email: '',
             message: '',
+            file: null,
             snackbar: false,
             text: `Meddelandet är skickat!`,
         }
@@ -135,7 +150,8 @@ export default {
             axios.post('https://formsubmit.co/ajax/info@evvab.se', {
                 name: this.name,
                 email: this.email,
-                message: this.message
+                message: this.message,
+                file: this.file
             })
             .then((response) => {
                 console.log(response)
@@ -150,6 +166,7 @@ export default {
             this.name = ''
             this.email = ''
             this.message = ''
+            this.file = null
             this.$refs.observer.reset()
         },
     },

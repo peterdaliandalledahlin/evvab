@@ -2,7 +2,7 @@
   <v-parallax
       ref="home"
       dark
-      :src="require('@/assets/jumbotron-bg.jpg')"
+      :src="require('../assets/jumbotron-bg.jpg')"
       id="home"
     >
       <v-row
@@ -62,13 +62,17 @@
 #opacity-btn-1, #opacity-btn-2 {
   background-color: rgba(165,92,27, .7) !important;
 }
-.outline {
+/* .outline {
   -webkit-text-stroke: 1px black;
-}
+} */
 .evvab {
+  /* background-color: #a40606;
+  background-image: linear-gradient(315deg, #a40606 0%, #E74C13 74%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; */
     /* font-family: 'Open Sans', sans-serif; */
     font-family: 'Work Sans', sans-serif;
-    color: #E74C13 !important;
+    color: #e84c14 !important;
     animation: animateletterspacing 2s ease-in forwards;
      display: inline-block;
             transform: scale(1, 1.5);

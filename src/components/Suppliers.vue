@@ -1,5 +1,6 @@
 <template>
   <v-container id="suppliers">
+    <h4>Leverantörer</h4>
     <v-row class="mt-3">
       <v-col v-for="supplier in suppliers" :key="supplier.id" cols="12" sm="4" lg="3">
         <v-card
@@ -14,14 +15,14 @@
       <!-- <v-card-title>Det här blir en bra dag</v-card-title> -->
     </v-img>
 
-    <v-card-subtitle class="pb-0">
-      Number 10
-    </v-card-subtitle>
+    <!-- <v-card-subtitle class="pb-0">
+      Ev. information
+    </v-card-subtitle> -->
 
     <v-card-text class="text--primary">
       <div>{{ supplier.title}}</div>
 
-      <div>Whitsunday Island, Whitsunday Islands</div>
+      <div>Ev. annan information</div>
     </v-card-text>
 
     <v-card-actions>
@@ -43,6 +44,7 @@
 
 <script>
 export default {
+  name: 'suppliers',
   data() {
     return {
       suppliers: [

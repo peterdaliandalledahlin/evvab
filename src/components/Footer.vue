@@ -44,7 +44,7 @@
         <v-divider></v-divider>
 
         <v-card-text class="white--text">
-          {{ new Date().getFullYear() }} — <strong>&copy; EVVAB<br /> <a href="tel:+46728585757">072-858 57 57</a> <a href="mailto:info@evvab.se">info@evvab.se</a> Mångatan 21 • 749 44 Enköping</strong>
+          {{ new Date().getFullYear() }} — <strong>&copy; EVVAB<br /> <a href="tel:+46728585757">072-858 57 57</a> <a href="mailto:info@evvab.se">info@evvab.se</a><br />Mångatan 21 • 749 44 Enköping</strong>
         </v-card-text>
         <v-card-text>
             <v-chip
@@ -65,6 +65,7 @@
 
 <script>
 export default {
+  name: 'evvav-footer',
     data: () => ({
       icons: [
         {id: 1, link: '#home', icon: 'mdi-home'},
